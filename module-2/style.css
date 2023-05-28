@@ -26,7 +26,7 @@
   .item{
     position: relative;
     top: 0;
-    background-color:#999999;
+    background-color:rgb(210, 210, 210);
     margin: 15px;
     padding: 25px;
     border: 3px solid #000;
@@ -49,15 +49,15 @@
   }
   
   #title-one {
-    background-color: #D59898;
+    background-color: #ff7f50;
   } 
   
   #title-two{
-    background-color: #C14543;
+    background-color:#ff1493;
   }
   
   #title-three{
-    background-color: #E5D198;
+    background-color:darkorchid;
   }
   
   /* Simple Responsive Framework. */
