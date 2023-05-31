@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Nunito:wght@700&family=Poppins:wght@800&display=swap');
+   
+
+    h1{
+        text-align:center;
+    }
+
+    .container{
+      max-width: 550px;
+      height: 350px;
+      position: relative;
+      left:25rem;
+      padding: 20px;
+      background-image:linear-gradient(to top left, #753682 0%, #bf2e34 60%);
+      border-radius: 10px;
+      color:#fff;
+     
+      background-color: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(200px);
+      filter: blur();
+      box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+      border-radius: 9px;
+      
+    }
+
+    .btn{
+        position:absolute;
+        top:21rem;
+        left:15rem;
+        width:100px;
+        height: 40px;
+        border-radius: 50%;
+        outline:none;
+        border:none;
+        box-shadow: 0 2px 4px rgba(0,0,0,1);
+        
+    }
+    .quotes-text{
+        font-family: 'Nunito', sans-serif;
+        text-align:center;
+    }
+    .quotes-c{
+        height: 150px;
+        max-width:375px;
+        position:relative;
+        left:75px;
+        margin:50px 0px;
+        padding:25px;
+        background-color: rgba(255, 255, 255, 0.8);
+        color:black;
+        border-radius:40px;
+        
+    }
+    .quotes{
+        position:relative;
+        top:20px;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        display: flex;
+
+         
+    }
+    
+    
+       
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <div class="container">
+        <p class="quotes-text">Click the Button to generate random quote</p>
+        <div class="quotes-c hidden">
+            <p class="quotes"></p>
+        </div> 
+        <button  class="btn">New Quote</button>
+    </div>
+    <script src="r.js"></script>
+</body>
+</html>
