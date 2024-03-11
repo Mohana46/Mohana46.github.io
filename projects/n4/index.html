@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image hover</title>
+    <style>
+        img {
+            height: 200px;
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <img id="image" src="m.jpg" alt="panda" onmouseover="changeImage()" onmouseout="restoreImage()">
+    <script>
+        function changeImage() {
+            var img = document.getElementById('image');
+            img.src = 'm.jpg';
+        }
+        function restoreImage() {
+            var img = document.getElementById('image');
+            img.src = 'n.jpg';
+        }
+    </script>
+</body>
+</html>

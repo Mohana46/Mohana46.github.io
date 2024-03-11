@@ -1,0 +1,174 @@
+/* resets and general styles */
+
+*{
+	margin: 0 auto;
+	
+	box-sizing: border-box;
+}
+
+
+
+::selection{
+	color: #FFFFFF;
+	background: #3498db;
+}
+
+body{
+	font: normal 16px 'Roboto', sans-serif;
+	position: absolute; 
+	height: 100%;
+	width: 100%;
+}
+
+div.wrapper{
+	width: calc(4*245px);
+	margin: 0 auto;
+}
+
+
+/* page layout */
+
+/* header */
+
+header{
+	width: 100%;
+	height: 50%;
+	background:#3498db;
+}
+
+/* section */
+
+section{
+	width: 100%;
+	height: 50%;
+}
+
+section h1, section p.meta{
+	color: #FFFFFF;
+	margin-bottom: 15px;
+}
+
+section p.numbers{font-size: 6em;}
+section p.meta,section p.strings{font-size: 1.5em;}
+section h1{font-size: 4.5em;}
+
+/* countdown styles */
+
+div#countdown{color: #353535;
+margin:0px 100px;
+}
+
+div#countdown p{
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+p.numbers{
+	width: 100%;
+	height: 85%;
+	background: #FFFFFF;
+	margin-top: -25px;
+	padding-top: 100px;
+}
+
+p.strings{
+	width: 100%;
+	height: auto;
+	padding: 30px 0;
+	background:#3498db;
+	color: #FFFFFF;
+}
+
+div.cd-box{
+	width: 210px;
+	height: 360px;
+	background: #FFFFFF;
+	float: left;
+	padding: 25px 0 0 0;
+	margin: -160px 15px 0 0;
+	box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+}
+div#button {
+    margin-left: 110px;
+}
+
+.btn {
+    width: 180px;
+    height: 50px;
+    background: #04AA6D;
+    color: #FFFFFF;
+    float: left;
+    margin: 40px 50px 0 0;
+    box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer; 
+    line-height: 50px; 
+}
+.hidden{
+    display: none;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    div.wrapper{
+        width: 100%;
+        margin: 0 auto;
+    }
+    header{
+        width: 100%;
+        height: 50%;
+        background:#3498db;
+    }
+    div.cd-box {
+        width: 100%;
+        height: auto; 
+        background: #FFFFFF;
+        float: none;
+        margin: 20px 0;
+        box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+        padding: 15px; 
+        text-align: center; 
+    }
+
+    p.numbers {
+        font-size: 24px; 
+    }
+
+    p.strings {
+        padding: 15px 0; 
+    }
+    div#button {
+        margin-left: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn {
+       
+        width: 180px;
+        height: 50px;
+        background: #04AA6D;
+        color: #FFFFFF;
+        margin: 20px auto; 
+        box-shadow: 5px 6px 9px 1px rgba(53, 53, 53, 0.5);
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+        line-height: 50px;
+    }
+    .hidden{
+        display: block;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 100px;
+        margin-top: 40px;
+    }
+    
+}

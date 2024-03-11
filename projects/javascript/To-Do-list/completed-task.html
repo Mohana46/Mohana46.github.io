@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Completed Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin:0px;
+    }
+
+    header {
+        width:100%;
+    background-color:#333;
+     padding: 25px 0;
+     margin: 0px 0px 50px 0px;
+   }
+
+ nav {
+  text-align: center;
+ }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+ }
+
+nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+    #completed-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .delete-btn {
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 15px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <a href="task.html">Task</a>
+          <a href="completed-task.html">Completed Task</a>
+        </nav>
+    </header>
+  <div id="completed-container">
+    <h2>Completed Tasks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Completed On</th>
+        </tr>
+      </thead>
+      <tbody id="completedTaskList"></tbody>
+    </table>
+
+    <button class="delete-btn" onclick="deleteCompletedTasks()">Delete All </button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const completedTaskList = document.getElementById("completedTaskList");
+
+      const completedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
+
+      completedTasks.forEach(completedTask => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${completedTask.text}</td>
+          <td>${completedTask.completedDate}</td>
+        `;
+        completedTaskList.appendChild(tr);
+      });
+    });
+
+    function deleteCompletedTasks() {
+      localStorage.removeItem('completedTasks');
+
+      const completedTaskList = document.getElementById("completedTaskList");
+      completedTaskList.innerHTML = "";
+    }
+  </script>
+</body>
+</html>

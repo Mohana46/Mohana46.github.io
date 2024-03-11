@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="img hidden">
+    <img src="./Assets/ww.webp" alt="Weather" />
+  </div>
+  <div class="vl"></div>
+  <div class="weather">
+    <div class="search">
+      <input type="text" placeholder="Enter City Name" id="cityInput" />
+      <button onclick="handleClick()">   <img src="./Assets/search.png" alt="search" /></button>
+    </div>
+    <div class="winfo">
+      <h3 id="temperature"></h3>
+      <div class="i-col">
+        <img src="./Assets/location.png" class='loc' alt="Location:" />
+        <p id="cityName"></p>
+      </div>
+    </div>
+    <hr />
+    <div class="details">
+      <div class="con1">
+        <div class="i-col">
+          <img id="weatherImage" src="" class="cloud" alt="Cloud" />
+        </div>
+        <div class="col">
+          <p class='max' id="maxTemp"></p>
+          <p class='min' id="minTemp"></p>
+        </div>
+      </div>
+      <div class="con2">
+        <div class="w">
+          <img src="./Assets/wind.png" class="wind" alt="Wind" />
+          <p id="windSpeed"></p>
+        </div>
+        <div class="h">
+          <img src="./Assets/hot.png" class="hum" alt="Humidity" />
+          <p id="humidity"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  function getWeatherByLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        const api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=4b093c48761324e4aa7aed456eae0686&units=metric`;
+
+        axios.get(api)
+          .then((res) => {
+            updateWeatherData(res.data);
+          })
+          .catch((err) => console.log(err));
+      });
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+  
+
+
+  function updateWeatherData(data) {
+ 
+    const iconCode = data.weather[0].icon;
+  const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
+
+  document.getElementById('temperature').innerText = `${Math.round(data.main.temp)}°C`;
+  document.getElementById('cityName').innerText = data.name;
+  document.getElementById('maxTemp').innerText = `Max ${Math.round(data.main.temp_max)}°C`;
+  document.getElementById('minTemp').innerText = `Min ${Math.round(data.main.temp_min)}°C`;
+  document.getElementById('windSpeed').innerText = `${Math.round(data.wind.speed)} km/hr`;
+  document.getElementById('humidity').innerText = `${Math.round(data.main.humidity)}%`;
+  document.getElementById('weatherImage').src = iconUrl;
+  }
+
+  function handleClick() {
+    const name = document.getElementById('cityInput').value;
+    if (name !== "") {
+      const api = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=4b093c48761324e4aa7aed456eae0686&units=metric`;
+      axios.get(api)
+        .then((res) => {
+          updateWeatherData(res.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
+  getWeatherByLocation();
+</script>
+
+</body>
+</html>

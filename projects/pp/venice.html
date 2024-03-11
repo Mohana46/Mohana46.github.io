@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venice</title>
+    <link rel="stylesheet" href="collage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+          <div class="logo">
+             <i class="fa-solid fa-d"></i> Photography
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html#section1">HOME</a></li>
+              <li><a href="index.html#section2">GALLERY</a></li>
+              <li><a href="index.html#section3">ABOUT ME</a></li>
+              <li><a href="index.html#section4">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <section id="section1" class="section1">
+        <div class="content">
+            <h1>Venice</h1>
+        </div>
+</section>
+<section id="section2" class="section2">
+    <div class="container">
+        <div class="g">
+            <figure class="img1"><img src="https://images.pexels.com/photos/158441/venice-italy-sunset-grand-canal-158441.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+            <figure class="img2"><img src="https://images.pexels.com/photos/15919505/pexels-photo-15919505/free-photo-of-street-canal-with-buildings-in-venice.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img3"><img src="https://images.pexels.com/photos/1034129/pexels-photo-1034129.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"></figure>
+            <figure class="img4"><img src="https://images.pexels.com/photos/258196/pexels-photo-258196.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img5"><img src="https://images.pexels.com/photos/1144570/pexels-photo-1144570.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img6"><img src="https://images.pexels.com/photos/53207/carnival-venice-eyes-mask-53207.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img8"><img src="https://images.pexels.com/photos/1058253/pexels-photo-1058253.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img7"><img src="https://images.pexels.com/photos/16458299/pexels-photo-16458299/free-photo-of-interior-of-saint-marks-basilica.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"> </figure>
+            <figure class="img9"><img src="https://images.pexels.com/photos/7399276/pexels-photo-7399276.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"></figure>
+            <figure class="img10"><img src="https://images.pexels.com/photos/161837/venice-cruise-mediterranean-architecture-161837.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"></figure>
+        </div>
+    </div>
+    <div class="overlay hidden" onclick="closeModal()"></div>
+
+    <div class="modal hidden" id="modal">
+      <button class="close-modal" onclick="closeModal()">&times;</button>
+      <div class="modal-content">
+        <img src="" id="modal-image" alt="Modal Image">
+      </div>
+    </div>
+
+</section> 
+<footer><h3>&copy;2023</h3></footer>  
+<script src="m.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai</title>
+    <link rel="stylesheet" href="collage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+          <div class="logo">
+             <i class="fa-solid fa-d"></i> Photography
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html#section1">HOME</a></li>
+              <li><a href="index.html#section2">GALLERY</a></li>
+              <li><a href="index.html#section3">ABOUT ME</a></li>
+              <li><a href="index.html#section4">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <section id="section1" class="section1">
+        <div class="content">
+            <h1>Dubai</h1>
+        </div>
+</section>
+<section id="section2" class="section2">
+    <div class="container">
+        <div class="g">
+            <figure class="img1"><img src="https://images.pexels.com/photos/1467300/pexels-photo-1467300.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+            <figure class="img2"><img src="https://images.pexels.com/photos/2041556/pexels-photo-2041556.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img3"><img src="https://images.pexels.com/photos/14568164/pexels-photo-14568164.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+            <figure class="img4"><img src="https://images.pexels.com/photos/3378916/pexels-photo-3378916.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img5"><img src="https://images.pexels.com/photos/7199830/pexels-photo-7199830.png?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img6"><img src="https://images.pexels.com/photos/2204880/pexels-photo-2204880.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img8"><img src="https://images.pexels.com/photos/2867769/pexels-photo-2867769.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img7"><img src="https://images.pexels.com/photos/1759478/pexels-photo-1759478.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"> </figure>
+            <figure class="img9"><img src="https://images.pexels.com/photos/4502694/pexels-photo-4502694.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)"></figure>
+            <figure class="img10"><img src="https://images.pexels.com/photos/10514386/pexels-photo-10514386.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+        </div>
+    </div>
+    <div class="overlay hidden" onclick="closeModal()"></div>
+
+    <div class="modal hidden" id="modal">
+      <button class="close-modal" onclick="closeModal()">&times;</button>
+      <div class="modal-content">
+        <img src="" id="modal-image" alt="Modal Image">
+      </div>
+    </div>
+    <script src="m.js"></script>
+</section>   
+<footer><h3>&copy;2023</h3></footer>
+
+</body>
+</html>

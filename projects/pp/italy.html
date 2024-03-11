@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy</title>
+    <link rel="stylesheet" href="italy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+          <div class="logo">
+             <i class="fa-solid fa-d"></i> Photography
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html#section1">HOME</a></li>
+              <li><a href="index.html#section2">GALLERY</a></li>
+              <li><a href="index.html#section3">ABOUT ME</a></li>
+              <li><a href="index.html#section4">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <section id="section1" class="section1">
+            <div class="content">
+                <h1>Italy</h1>
+            </div>
+    </section>
+    <section id="section2" class="section2">
+        <div class="container">
+            <div class="g">
+                <figure class="img1"><img src="https://images.pexels.com/photos/981682/pexels-photo-981682.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img2"><img src="https://images.pexels.com/photos/1540585/pexels-photo-1540585.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img3"><img src="https://images.pexels.com/photos/2225442/pexels-photo-2225442.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img4"><img src="https://images.pexels.com/photos/1797158/pexels-photo-1797158.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+                <figure class="img5"><img src="https://images.pexels.com/photos/2438779/pexels-photo-2438779.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img6"><img src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img7"><img src="https://images.pexels.com/photos/2723450/pexels-photo-2723450.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img8"><img src="https://images.pexels.com/photos/56886/vittorio-emanuele-monument-rome-rome-palace-altare-della-patria-56886.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openModal(this)"></figure>
+                <figure class="img9"><img src="https://images.pexels.com/photos/1509803/pexels-photo-1509803.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+                <figure class="img10"><img src="https://images.pexels.com/photos/735301/pexels-photo-735301.jpeg?auto=compress&cs=tinysrgb&w=600"onclick="openModal(this)" ></figure>
+            </div>
+        </div>
+        <div class="overlay hidden" onclick="closeModal()"></div>
+
+    <div class="modal hidden" id="modal">
+      <button class="close-modal" onclick="closeModal()">&times;</button>
+      <div class="modal-content">
+        <img src="" id="modal-image" alt="Modal Image">
+      </div>
+    </div>
+
+    </section>
+    <footer><h3>&copy;2023</h3></footer>
+    <script src="m.js"></script>
+</body>
+</html>

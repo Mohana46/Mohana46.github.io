@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #333;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  main {
+    position: relative;
+    width: 100rem;
+    height: 63rem;
+    background-color: hsl(294, 41%, 50%);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  .score{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:30px;
+    color:#fff;
+  }
+  .name {
+    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  
+  .score {
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: auto;
+  }
+  .game{
+    margin:0 280px;
+    
+  }
+  .image-button {
+    background-color: #fff;
+    border-radius: 50%; 
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin: 20px;
+    
+}
+.image-button img {
+    width: 60px;
+    
+}
+
+.c-p{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.c-p img{
+  width:50px;
+}
+.result{
+  color:#fff;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 150px;
+}
+.computer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 350px;
+  width:400px;
+  border-radius: 50%;
+  margin-left: -120px;
+}
+
+.player{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 350px;
+  width:400px;
+  border-radius: 50%;
+  margin-right: -120px;
+
+}
+
+.computer img,
+.player img {
+    width: 100px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.computer img {
+  transform: rotate(90deg);
+}
+.player img{
+ transform: rotate(-90deg) rotateY(180deg);
+}

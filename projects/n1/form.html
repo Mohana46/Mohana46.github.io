@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <form id="formid">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" onblur="nameValidation()" >
+            <div id="nameError" class="error-message"></div>
+            <label for="email">Email Id</label>
+            <input type="email" name="email" id="email" placeholder="Enter your Email id" onblur="emailValidation()">
+            <div id="emailError" class="error-message"></div> 
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter the Password" onblur="passwordValidation()">
+            <div id="passwordError" class="error-message"></div>
+            <label for="ConfirmPassword">Confirm Password</label>
+            <input type="password" name="Cpassword" id="Cpassword" placeholder="Enter the Password again" onblur="confirmPasswordValidation()" >
+            <div id="confirmPasswordError" class="error-message"></div>
+            <label for="mobileno">Mobile Number</label>
+            <input type="tel" name="mobileno" id="mobileno" pattern="[0-9]{10}" placeholder="Enter the Mobile Number" onblur="mobileValidation()" >
+            <div id="mobileError" class="error-message"></div>
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value=""></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Rather to say">Rather to say</option>
+            </select>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth"  min="1970-01-01" max="2023-06-30">
+           <label for="state">State:</label>
+            <select id="state" onchange="populateCities()">
+              <option value="">Select a state</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Maharashtra">Maharashtra</option>
+              
+              <option value="Kerala">Kerala</option>
+            </select>
+        
+            <label for="city">City:</label>
+            <select id="city">
+              <option value="">Select a city</option>
+            </select>
+            <label for="address">Address:</label>
+            <input type="text" id="address" >
+             <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    var nameInput = document.getElementById('name');
+    var nameError = document.getElementById('nameError');
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    var passwordInput = document.getElementById('password');
+    var passwordError = document.getElementById('passwordError');
+    var confirmPasswordInput = document.getElementById('Cpassword');
+    var confirmPasswordError = document.getElementById('confirmPasswordError');
+    var mobileInput = document.getElementById('mobileno');
+    var mobileError = document.getElementById('mobileError');
+    
+    function nameValidation() {
+        var name = nameInput.value.trim();
+        if (name === '') {
+            nameError.textContent = 'Name field is empty';
+        } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+            nameError.textContent = 'Invalid name';
+        } else {
+            nameError.textContent = '';
+        }
+    }
+    
+    function emailValidation() {
+        var email = emailInput.value.trim();
+        if (email === '') {
+            emailError.textContent = 'Email field is empty';
+        } else if (!validateEmailFormat(email)) {
+            emailError.textContent = 'Invalid email format';
+        } else {
+            emailError.textContent = '';
+        }
+    }
+    
+    function validateEmailFormat(email) {
+        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        return re.test(email);
+    }
+    
+    function passwordValidation() {
+        var password = passwordInput.value.trim();
+        if (password === '') {
+            passwordError.textContent = 'Password field is empty';
+        } else if (password.length < 6) {
+            passwordError.textContent = 'Password must be at least 6 characters long';
+        } else {
+            passwordError.textContent = '';
+        }
+    }
+    
+    function confirmPasswordValidation() {
+        var confirmPassword = confirmPasswordInput.value.trim();
+        var password = passwordInput.value.trim();
+        if (confirmPassword === '') {
+            confirmPasswordError.textContent = 'Confirm Password field is empty';
+        } else if (confirmPassword !== password) {
+            confirmPasswordError.textContent = 'Passwords do not match';
+        } else {
+            confirmPasswordError.textContent = '';
+        }
+    }
+    
+    function mobilenoValidation() {
+        var mobile = mobileInput.value.trim();
+        if (mobile === '') {
+            mobileError.textContent = 'Mobile number field is empty';
+        } else if (!validateMobileNumber(mobile)) {
+            mobileError.textContent = 'Please enter a valid 10-digit mobile number';
+        } else {
+            mobileError.textContent = '';
+        }
+    }
+    
+    function validateMobileNumber(number) {
+        var re = /^[0-9]{10}$/;
+        return re.test(number);
+    }
+    
+
+    function populateCities() {
+      var selectedState= document.getElementById("state").value;
+      var citySelect = document.getElementById("city");
+      
+
+      citySelect.innerHTML = "";
+      var cities;
+      
+      if (selectedState === "Tamil Nadu") {
+         cities = ["","Chennai", "Coimbatore", "Madurai", "Trichy"];
+      } else if (selectedState === "Karnataka") {
+         cities = ["","Bangalore", "Mysore", "Hubli", "Belgaum"];
+      } else if (selectedState === "Maharashtra") {
+         cities = ["","Mumbai", "Pune", "Nagpur", "Nashik"];
+      }
+      else if(selectedState==="Kerala"){
+        cities=["","Alappuzha","Ernakulam","Kozhikode","Palakkad","Kollam"];
+      }
+
+    
+      for (var i = 0; i < cities.length; i++) {
+        var option = document.createElement("option");
+        option.text = cities[i];
+        option.value = cities[i];
+        citySelect.add(option);
+      }
+    }
+    
+    
+      
+    
+    
+  </script>

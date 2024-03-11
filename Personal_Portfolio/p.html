@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <style>
+        body {
+            font-size: 20px;
+        }
+
+        .section-vertical {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+        }
+
+        .navbar {
+            border: none;
+        }
+
+        .projects {
+            margin-top: 80px;
+            position: relative;
+            padding-top: 30px;
+            /* Adjust this padding as needed */
+        }
+
+        .card {
+            width: 300px;
+            /* Set the width of your cards */
+            height: 300px;
+            /* Set the height of your cards */
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Add a subtle box shadow */
+            transition: transform 0.3s ease-in-out;
+            /* Add a smooth transition effect */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            /* Scale up the card on hover */
+        }
+
+        .card img {
+            height: 200px;
+            /* Set the height of the card image */
+            width: 300px
+                /* Ensure the image covers the entire space */
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-success {
+            margin-top: 10px;
+        }
+
+        /* Additional styling for responsiveness */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                /* Make cards full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#landing-page"> <img class="img-responsive center-block" src="img/md.png"
+                        width="100px" height="100px"> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html#landing-page">Home</a></li>
+                    <li><a href="index.html#projects">Skill</a></li>
+                    <li><a href="#about-me">Projects</a></li>
+                    <li><a href="index.html#about-me">About Me</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="projects-header">
+                <h1 class="section-heading text-center">Projects</h1>
+            </div>
+            <div class="card">
+                <img src="./projects/pp/logo.png" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">D Photography</h5>
+                    <a href="./projects/pp/index.html" class="btn btn-success">Go</a>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="./projects/javascript/dice_game/d.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Dice Game</h5>
+                    <a href="./projects/javascript/dice_game/index.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./projects/javascript/rock-paper-scissors/r.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Rock Paper Scissors</h5>
+                    <a href="./projects/javascript/rock-paper-scissors/index.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./projects/javascript/NumberGuess/g.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Guess a Number</h5>
+                    <a href="./projects/javascript/NumberGuess/no.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./projects/n2/bg.webp" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Multiplication Table Generator</h5>
+                    <a href="./projects/n2/table.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./projects/javascript/Random_quote_genetor/r.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Random Quote Generator</h5>
+                    <a href="./projects/javascript/Random_quote_genetor/index.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./projects/n1/form.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Form</h5>
+                    <a href="./projects/n1/form.html" class="btn btn-success">Go</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./projects/javascript/TEMPERATURE_CONVERTER/bg.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Temperature converter</h5>
+                    <a href="./projects/javascript/TEMPERATURE_CONVERTER/temp.html" class="btn btn-success">Go</a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <img src="./projects/javascript/timer/tt.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Timer</h5>
+                    <a href="./projects/javascript/timer/index.html" class="btn btn-success">Go</a>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="./projects/javascript/To-do-list/tt.jpg" class="img-thumbnail" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">To-do List</h5>
+                    <a href="./projects/javascript/To-do-list/task.html" class="btn btn-success">Go</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

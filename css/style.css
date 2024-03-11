@@ -1,0 +1,262 @@
+body{
+
+    font-size : 20px;
+    
+
+}
+
+.section-vertical{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content : center;
+    text-align : center;
+}
+
+.navbar {
+    
+  border : none;
+ 
+
+}
+nav{
+    height: 100px;
+}
+.navbar-brand {
+position: fixed;
+}
+
+
+header{
+    height: 100vh;
+    width : 100%;
+    top : 0px;
+    background : url(landing-page.jpg);
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content : center;
+    text-align : center;
+}
+
+header h1 {
+    color : #F9F6F3 !important;
+    font-size: 500%;
+    margin-bottom: 0px;
+}
+
+header p{
+    color: white !important;
+    /*font-family: 'Pangolin', cursive;*/
+    font-size : 165%;
+    margin-top: 0px;
+
+}
+header a{
+    text-decoration : none;
+}
+
+header .btn {
+    margin-top: 50px;
+    font-size : 120%;
+    color : white;
+    padding : 10px 20px 10px 20px;
+    border: solid white;
+    text-transform: uppercase;
+    transition : 1s;
+}
+
+
+
+.btn:hover {
+
+    color : gray;
+    border: solid gray;
+
+}
+.services{
+    height: 100vh;
+}
+
+.section-heading {
+
+     margin-top: 60px;
+
+}
+
+.services-container{
+
+  margin-bottom : 50px;
+
+}
+.services-header,
+.portfolio-header {
+
+    margin-bottom : 80px;
+
+}
+
+.services-header h1{
+
+    font-family: 'Ubuntu', sans-serif;
+
+
+}
+
+.services {
+
+    background:  #f3f9fe;
+    background-image: url(../img/services.png);
+    /*F3FAB6*/
+}
+
+.services .img-responsive {
+
+    height: 100px;
+    margin-bottom: 20px;
+}
+.service {
+
+    margin-bottom : 30px;
+
+}
+
+#about-me{
+height: 100vh;
+}
+#about-me{
+    background: url(../img/about-me.png);
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#about-me h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+}
+#about-me p{
+    font-size: 20px;
+}
+#about-me h1,
+#about-me p{
+    font-family: 'Raleway', sans-serif;    
+    color: white;
+}
+
+#about-me .fa{
+    font-size:35px;
+    color:white;
+    margin: 10px;
+}
+#about-me .social{
+    margin-bottom: 40px;
+}
+
+
+#contact{
+    height: 100vh;
+}
+#contact form{
+ 
+    margin-bottom: 40px;
+   
+}
+#contact .row h1{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+#contact .row p{
+    margin-bottom: 50px;
+}
+footer{
+    height: 80px;
+    background-color: black;
+    color:white;
+}
+
+
+@media screen and (max-width : 768px) {
+
+    .service {
+
+        margin-bottom : 50px;
+
+    }
+    footer p {
+        font-size: 15px;
+    }
+
+
+}
+
+@media screen and (min-width : 769px) {
+
+
+    .service {
+
+        margin-bottom : 50px;
+
+    }
+
+    .navbar-custom {
+
+        height: 80px;
+        background: transparent !important;
+
+    }
+
+    nav a {
+
+        background: transparent !important;
+
+    }
+
+    .navbar-custom .navbar-brand{
+
+        margin-top : 20px;
+        font-size : 30px;
+        padding : 10px;
+        transition: all ease .5s;
+
+    }
+
+    .navbar-custom .nav {
+
+        margin-top : 15px;
+
+    }
+
+    .navbar-fade {
+
+        height: 50px;
+        background: black;
+    }
+
+
+
+
+}
+
+@media screen and (max-width : 768px){
+
+    .navbar{
+
+        opacity: 1;
+
+    }
+
+    header h1{
+        font-size: 300%;
+    }
+
+    #about-me p{
+        font-size: 80%;
+    }
+
+}

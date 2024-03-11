@@ -1,0 +1,330 @@
+.container {
+    width: 900px;
+    height: 80vh;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 7px 6px 9px 3px rgba(53, 53, 53, 0.5);
+    display: flex;
+    flex-direction: row;
+    color: #115c5e;
+  }
+  
+  .img img {
+    width: 420px;
+    height: 90%;
+    margin: 20px 0 0 0;
+  }
+  
+  .vl {
+    border-left: 2px solid #ccc;
+    height: 80vh;
+
+  }
+  
+  .weather {
+    width:500px;
+    padding: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 10px 0px;
+  }
+  
+  .search input {
+    border: none;
+    outline: none;
+    padding: 15px 25px;
+    background-color: rgb(222, 237, 243);
+    color: black;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .search button {
+    border: none;
+    outline: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(222, 237, 243);
+  }
+  
+  .search button img {
+    width: 30px;
+  }
+  
+  .winfo {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .winfo h3 {
+    font-size: 90px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .winfo p {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .winfo .i-col {
+    display: flex;
+    margin-left: 110px;
+  }
+  
+  .loc {
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  
+  .details {
+    margin: auto 50px;
+  }
+  
+  .con1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cloud {
+    height: 130px;
+    margin-top: 40px;
+  }
+  
+  .con1 .col p {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 35px 5px;
+  }
+  
+  .con2 {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  
+  .con2 img {
+    height: 50px;
+    width: 50px;
+    color: #115c5e;
+    margin-right: 10px;
+  }
+  
+  .h,
+  .w {
+    display: flex;
+  }
+  
+  .con2 p {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  span {
+    margin-top: 8px;
+    margin-left: 5px;
+  }
+   hr{
+    margin: 20px 0px;
+   }
+  @media only screen and (max-width: 480px) {
+    .container {
+      margin: 20px auto;
+    }
+  
+    .weather {
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  
+    .search {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .search input {
+      margin: 10px 0;
+    }
+  
+    .search button {
+      width: 100%;
+    }
+  
+    .winfo {
+      margin-top: 10px;
+    }
+  
+    .winfo h3 {
+      font-size: 40px;
+    }
+  
+    .winfo p {
+      font-size: 20px;
+    }
+  
+    .winfo .i-col {
+      margin-left: 0;
+    }
+  
+    .con1,
+    .con2 {
+      flex-direction: column;
+      margin: 10px;
+    }
+  
+    .cloud {
+      margin-top: 10px;
+    }
+  
+    .con1 .col p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+  
+    .con2 {
+      column-gap: 10px;
+    }
+  
+    .con2 img {
+      height: 30px;
+      width: 30px;
+      margin-right: 5px;
+    }
+  
+    .con2 p {
+      font-size: 18px;
+    }
+  
+    span {
+      margin-top: 5px;
+      margin-left: 2px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+  
+    .container {
+      flex-direction: column;
+      height: auto;
+      width: 90%;
+      background-color: #fff;
+    }
+  
+    .hidden {
+      display: none;
+    }
+  
+    .vl {
+      display: none;
+    }
+  
+    .weather {
+      max-width: 100%;
+      border-radius: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 0;
+    }
+  
+    .search {
+      display: flex;
+      align-items: center;
+      margin: 0px 0px 10px 0px;
+    }
+  
+    .search input {
+      border: none;
+      outline: none;
+      padding: 15px 25px;
+      background-color: rgb(222, 237, 243);
+      color: black;
+      border-radius: 30px;
+      flex: 1;
+      width: 180px;
+      font-size: 18px;
+    }
+  
+    .search button {
+      border: none;
+      outline: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: rgb(222, 237, 243);
+    }
+  
+    .con1 .col {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .con1 .col p {
+      font-size: 30px;
+    }
+  
+    .winfo .i-col {
+      margin-left: 70px;
+    }
+  
+    .winfo .i-col h3 {
+      font-size: 50px;
+      margin-left: 20px;
+    }
+  
+    .winfo .i-col p {
+      font-size: 30px;
+    }
+  
+    .loc {
+      height: 30px;
+      margin-top: 15px;
+    }
+  
+    .con2 {
+      display: flex;
+    }
+  
+    .con2 img {
+      height: 40px;
+      width: 50px;
+      color: #115c5e;
+      margin-right: 10px;
+    }
+  
+    .h,
+    .w {
+      display: flex;
+    }
+  
+    .con2 p {
+      font-size: 30px;
+      font-weight: 500;
+      margin: 0;
+    }
+  
+    span {
+      margin-top: 15px;
+      margin-left: 10px;
+    }
+  }
+  

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0px;
+    }
+    header {
+        width:100%;
+    background-color:#333;
+     padding: 25px 0;
+     margin: 0px 0px 50px 0px;
+   }
+
+ nav {
+  text-align: center;
+ }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+ }
+
+nav a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+
+    #todo-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+    }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      font-size: 18px;
+    }
+
+    #addBtn {
+      background-color:#e74c3c ;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .delete-btn {
+      background-color:#e74c3c;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .completed-btn {
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    span {
+      font-size: 24px;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      #todo-container {
+        width: 80%;
+      }
+
+      input[type="text"] {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      input[type="text"] {
+        width: 100%;
+      }
+
+      #addBtn {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="task.html">Task</a>
+      <a href="completed-task.html">Completed Task</a>
+    </nav>
+  </header>
+  <div id="todo-container">
+    <h1>Tasks</h1>
+
+    <input type="text" id="taskInput" placeholder="New task...">
+    <button id="addBtn">Add</button>
+
+    <h2>Task Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="taskTable"></tbody>
+    </table>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const addBtn = document.getElementById("addBtn");
+      const taskInput = document.getElementById("taskInput");
+      const taskTable = document.getElementById("taskTable");
+
+      addBtn.addEventListener("click", function() {
+        const taskText = taskInput.value.trim();
+        if (taskText !== "") {
+          addTaskToTable(taskText);
+          taskInput.value = "";
+        }
+      });
+
+      function addTaskToTable(taskText) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${taskText}</td>
+          <td><button class="completed-btn" onclick="completeTask(this)">Complete</button>
+            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </td>
+        
+        `;
+        taskTable.appendChild(tr);
+      }
+
+      window.completeTask = function(element) {
+        const tr = element.parentElement.parentElement;
+        const tdTask = tr.querySelector('td:first-child');
+        tdTask.classList.add("completed");
+
+        // Move to completed tasks page
+        const completedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
+        const currentDate = new Date();
+        const completedTask = {
+          text: tdTask.innerText,
+          completedDate: currentDate.toLocaleString()
+        };
+        completedTasks.push(completedTask);
+        localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+
+        // Remove from current tasks page
+        taskTable.removeChild(tr);
+      };
+      window.deleteTask = function(element) {
+        const tr = element.parentElement.parentElement;
+        taskTable.removeChild(tr);
+      };
+    });
+  </script>
+</body>
+</html>

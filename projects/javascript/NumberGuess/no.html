@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * 
+      {
+        background-color:lightskyblue;
+      }
+
+      .btn {
+        border-radius: 10px;
+        border-color: coral;
+        height: 50pxx;
+        width: 115px;
+        padding: 5px 10px 2px;
+        background: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 30px;
+        cursor: pointer;
+        margin-left: 20rem;
+        margin-top: 1rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        margin-left: 29rem;
+        font-size: 50px;
+      }
+      h2 {
+        font-size: 30px;
+        margin-left: 55rem;
+        margin-top: -30px;
+      }
+      .number {
+        position: relative;
+        width: 100px;
+        height: 75px;
+        background-color: white;
+        font-size: 70px;
+        left: 36rem;
+        top: -60px;
+        padding-left: 50px;
+      }
+      hr {
+        height: 10px;
+        background-color: white;
+        border: none;
+        margin-top: 100px;
+      }
+      input[type="text"] {
+        height: 50px;
+        width: 120px;
+        background: white;
+        border: none;
+        margin-left: 20rem;
+        outline: none;
+        font-size: 30px;
+      }
+      .left {
+        
+        margin-top: 20px;
+      }
+      .right {
+        margin-left: 55rem;
+        margin-top: -150px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="g">
+      <div class="c1">
+        <button class="btn Again" onclick="returnFunction()">Again!</button>
+        <h2>Between 1 to 10</h2>
+        <h1>Guess My Number!</h1>
+        <hr />
+        <div class="number">?</div>
+      </div>
+      <div class="left">
+        <input type="text" class="guess" /><br />
+        <button class="btn Check" onclick="printFunction()">check</button>
+      </div>
+      <div class="right">
+        <p class="message">Start guessing...</p>
+        <p class="l-score">Score:<span class="score">10</span></p>
+        <p class="l-highscore">Highscore:<span class="highscore">0</span></p>
+      </div>
+    </div>
+
+    <script src="no.js"></script>
+  </body>
+</html>
