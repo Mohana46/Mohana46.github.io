@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fas fa-book"></i> Book Wander</a>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="index.html#section2">Category</a>
+                <a href="shop.html">Shop</a>
+                <a href="cart.html">Cart</a>
+                
+            </div>
+        </div>
+    </header>
+    <section class="category-fiction " id="category-fiction ">
+        <h2>Fiction</h2>
+        <div class="book-container" id="bookContainerFiction"></div>
+    </section>
+    <section class="category-nonfiction c" id="category-nonfiction">
+        <h2>Non-Fiction</h2>
+        <div class="book-container" id="bookContainerNonFiction"></div>
+    </section>
+    <section class="category-mystery c" id="category-mystery">
+        <h2>Mystery</h2>
+        <div class="book-container" id="bookContainerMystery"></div>
+    </section>
+    <footer class="footer">
+      <p>&copy; 2023 Book Wander. All Rights Reserved.</p>
+  </footer>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        
+        <p id="popupText"></p>
+        <button id="ok" onclick="closePopup()">OK</button>
+    </div>
+    <script>
+           const books = {
+    fiction: [
+       
+        {
+            title: "The God of Small Things",
+            author: "Arundhati Roy",
+            price: 499.00,
+            image: "./image/the_god_of_small_things.jpg"
+        },
+        {
+            title: "The White Tiger",
+            author: "Aravind Adiga",
+            price: 449.00,
+            image: "./image/the_white_tiger.jpg"
+        },
+        {
+            title: "The Namesake",
+            author: "Jhumpa Lahiri",
+            price: 349.00,
+            image: "./image/the_namesake.jpg"
+        },
+        {
+            title: "The Guide",
+            author: "R.K. Narayan",
+            price: 299.00,
+            image: "./image/the_guide.jpg"
+        },
+        {
+            title: "Interpreter of Maladies",
+            author: "Jhumpa Lahiri",
+            price: 429.00,
+            image: "./image/interpreter_of_maladies.jpg"
+        },
+        {
+            title: "Train to Pakistan",
+            author: "Khushwant Singh",
+            price: 379.00,
+            image: "./image/train_to_pakistan.jpg"
+        },
+        {
+            title: "The Inheritance of Loss",
+            author: "Kiran Desai",
+            price: 459.00,
+            image: "./image/the_inheritance_of_loss.jpg"
+        },
+        {
+            title: "The Palace of Illusions",
+            author: "Chitra Banerjee Divakaruni",
+            price: 389.00,
+            image: "./image/the_palace_of_illusions.jpg"
+        },
+        {
+            title: "The Shadow Lines",
+            author: "Amitav Ghosh",
+            price: 419.00,
+            image: "./image/the_shadow_lines.jpg"
+        },
+    ],
+    nonFiction: [
+    {
+      title: "The Immortals of Meluha",
+      author: "Amish Tripathi",
+      price: 359.00,
+      image: "./image/the_immortals_of_meluha.jpg"
+    },
+    {
+      title: "India After Gandhi",
+      author: "Ramachandra Guha",
+      price: 479.00,
+      image: "./image/india_after_gandhi.jpg"
+    },
+    {
+      title: "My Experiments with Truth",
+      author: "Mahatma Gandhi",
+      price: 299.00,
+      image: "./image/my_experiments_with_truth.jpg"
+    },
+    {
+      title: "The Discovery of India",
+      author: "Jawaharlal Nehru",
+      price: 419.00,
+      image: "./image/the_discovery_of_india.jpg"
+    },
+    {
+      title: "Wings of Fire",
+      author: "A.P.J. Abdul Kalam",
+      price: 349.00,
+      image: "./image/wings_of_fire.jpg"
+    },
+    {
+      title: "The Argumentative Indian",
+      author: "Amartya Sen",
+      price: 389.00,
+      image: "./image/the_argumentative_indian.jpg"
+    },
+    {
+      title: "An Era of Darkness",
+      author: "Shashi Tharoor",
+      price: 449.00,
+      image: "./image/an_era_of_darkness.jpg"
+    },
+    {
+      title: "The Man Who Knew Infinity",
+      author: "Robert Kanigel",
+      price: 409.00,
+      image: "./image/the_man_who_knew_infinity.jpg"
+    },
+    {
+      title: "The Glass Bead Game",
+      author: "Hermann Hesse",
+      price: 369.00,
+      image: "./image/glass_bead_game.jpg"
+    },
+    
+    ],
+    mystery: [
+    {
+    title: "The Cuckoo's Calling",
+    author: "Robert Galbraith (J.K. Rowling)",
+    price: 499.00,
+    image: "./image/cuckoos_calling.jpg"
+  },
+  {
+    title: "In the Shadows of Death",
+    author: "Sourabh Mukherjee",
+    price: 349.00,
+    image: "./image/shadows_of_death.jpg"
+  },
+  {
+    title: "Gone with the Vindaloo",
+    author: "Vijay Nair",
+    price: 399.00,
+    image: "./image/gone_with_vindaloo.jpg"
+  },
+ 
+  {
+    title: "Murder in Mahim",
+    author: "Jerry Pinto",
+    price: 379.00,
+    image: "./image/murder_in_mahim.jpg"
+  },
+
+  {
+    title: "The Dark Road",
+    author: "Mayur Didolkar",
+    price: 369.00,
+    image: "./image/dark_road.jpg"
+  },
+  {
+    title: "The Sialkot Saga",
+    author: "Ashwin Sanghi",
+    price: 549.00,
+    image: "./image/sialkot_saga.jpg"
+  },
+  {
+    title: "A Rising Man",
+    author: "Abir Mukherjee",
+    price: 499.00,
+    image: "./image/rising_man.jpg"
+  },
+    ],
+   
+};
+
+        
+function renderBooks(category, containerId) {
+    const bookContainer = document.getElementById(containerId);
+    bookContainer.innerHTML = "";
+
+    books[category].forEach(book => {
+        const bookElement = document.createElement("div");
+        bookElement.classList.add("book");
+
+        bookElement.innerHTML = `
+            <img src="${book.image}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p>Author: ${book.author}</p>
+            <p>Price: ₹${book.price.toFixed(2)}</p>
+            <button onclick="addToCart('${book.title}')">Add to Cart</button>
+        `;
+
+        bookContainer.appendChild(bookElement);
+    });
+}
+function addToCart(title) {
+            const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existingBook = existingCart.find(book => book.title === title);
+
+            if (existingBook) {
+                showPopup("This book is already in the cart!");
+            } else {
+                const bookToAdd = Object.values(books).flat().find(book => book.title === title);
+
+                if (bookToAdd) {
+                    existingCart.push(bookToAdd);
+                    localStorage.setItem("cart", JSON.stringify(existingCart));
+                    showPopup(`${bookToAdd.title} has been added to the cart!`);
+                } else {
+                    showPopup("Book not found!");
+                }
+            }
+        }
+
+        function showPopup(message) {
+            const popup = document.getElementById("popup");
+            const overlay = document.getElementById("overlay");
+            const popupText = document.getElementById("popupText");
+
+            
+            popupText.textContent = message;
+
+            
+            overlay.style.display = "block";
+            popup.style.display = "block";
+            setTimeout(() => {
+                closePopup();
+            }, 1000);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            const overlay = document.getElementById("overlay");
+
+           
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        }
+
+window.onload = function () {
+    renderBooks("fiction", "bookContainerFiction");
+    renderBooks("nonFiction", "bookContainerNonFiction");
+    renderBooks("mystery", "bookContainerMystery");
+   
+};
+    </script>
+</body>
+</html>

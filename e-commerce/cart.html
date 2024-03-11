@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"><i class="fas fa-book"></i> Book Wander</a>
+            <div class="navbar">
+                <a href="index.html">Home</a>
+                <a href="index.html#section2">Category</a>
+                <a href="shop.html">Shop</a>
+                <a href="cart.html">Cart</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="cart">
+        <h2>Shopping Cart</h2>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Book Name</th>
+                    <th>Quantity</th>
+
+                    <th>Action</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>Total</td>
+                    <td id="totalPriceCell"> ₹0.00</td>
+                </tr>
+            </tfoot>
+        </table>
+        <button id="buy" onclick="showPopup()">Buy</button>
+    </section>
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <p id="popupText"></p>
+        <button id="ok" onclick="clearCart()">OK</button>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2023 Book Wander. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function showCart() {
+            const cartTable = document.getElementById("cartTable");
+            const cartBody = document.getElementById("cartBody");
+            const totalPriceCell = document.getElementById("totalPriceCell");
+
+            const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            cartBody.innerHTML = "";
+            let totalPrice = 0;
+
+            cartData.forEach((book, index) => {
+                const row = cartBody.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                const cell4 = row.insertCell(3);
+                const cell5 = row.insertCell(4);
+
+                cell1.textContent = index + 1;
+                cell2.textContent = book.title;
+                cell3.innerHTML = `
+                    <button onclick="decreaseQuantity(${index})">-</button>
+                    <span>${book.quantity || 1}</span>
+                    <button onclick="increaseQuantity(${index})">+</button>
+                `;
+                cell4.innerHTML = `<button onclick="removeFromCart(${index})">Remove</button>`;
+                cell5.textContent = `₹${(book.price * (book.quantity || 1)).toFixed(2)}`;
+
+                totalPrice += book.price * (book.quantity || 1);
+            });
+
+            totalPriceCell.textContent = ` ₹${totalPrice.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            cartData.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cartData));
+            showCart();
+        }
+
+        function increaseQuantity(index) {
+            const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cartData[index]) {
+                cartData[index].quantity = (cartData[index].quantity || 1) + 1;
+            }
+            localStorage.setItem("cart", JSON.stringify(cartData));
+            showCart();
+        }
+
+        function decreaseQuantity(index) {
+            const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cartData[index] && cartData[index].quantity > 1) {
+                cartData[index].quantity -= 1;
+            }
+            localStorage.setItem("cart", JSON.stringify(cartData));
+            showCart();
+        }
+
+        function showPopup() {
+            const popup = document.getElementById("popup");
+            const overlay = document.getElementById("overlay");
+            const popupText = document.getElementById("popupText");
+            const totalPriceCell = document.getElementById("totalPriceCell");
+
+            const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+            let popupContent = "<h2>Order Summary</h2>";
+
+            cartData.forEach((book) => {
+                popupContent += `${book.title} - ${book.quantity || 1}<br>`;
+            });
+
+            popupContent += `<br><strong>Total Price:</strong> ${totalPriceCell.textContent.trim()}`;
+            popupText.innerHTML = popupContent;
+
+            overlay.style.display = "block";
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            const popup = document.getElementById("popup");
+            const overlay = document.getElementById("overlay");
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            showCart();
+            const popupText = document.getElementById("popupText");
+            popupText.innerHTML = "Thank You! 😊";
+
+            setTimeout(() => {
+                closePopup();
+            }, 2000);
+        }
+
+        window.onload = function () {
+            showCart();
+        };
+    </script>
+</body>
+
+</html>
